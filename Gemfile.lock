@@ -158,14 +158,14 @@ GEM
     rspec-mocks (3.9.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
-    rspec-rails (3.9.0)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-core (~> 3.9.0)
-      rspec-expectations (~> 3.9.0)
-      rspec-mocks (~> 3.9.0)
-      rspec-support (~> 3.9.0)
+    rspec-rails (4.0.0.beta4)
+      actionpack (>= 4.2)
+      activesupport (>= 4.2)
+      railties (>= 4.2)
+      rspec-core (~> 3.9)
+      rspec-expectations (~> 3.9)
+      rspec-mocks (~> 3.9)
+      rspec-support (~> 3.9)
     rspec-support (3.9.2)
     ruby_dep (1.5.0)
     rubyzip (2.0.0)
@@ -221,22 +221,21 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   byebug
-  capybara (>= 2.15)
+  capybara
   factory_bot_rails
-  listen (>= 3.0.5, < 3.2)
+  listen
   pg
   puma
   rails
   rspec
-  rspec-rails
+  rspec-rails (~> 4.0.0.beta3)
   selenium-webdriver
   shoulda-matchers
   simple_form
   spring
-  spring-watcher-listen (~> 2.0.0)
+  spring-watcher-listen
   turbolinks
-  tzinfo-data
-  web-console (>= 3.3.0)
+  web-console
   webdrivers
   webpacker
 
