@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
-
 RSpec.describe Product, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "tem um produto válido" do
+    expect(build(:product)).to be_valid
+  end
 end
