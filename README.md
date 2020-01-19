@@ -25,6 +25,8 @@ Things you may want to cover:
 
 GEMS EXTRAS
 
+Desenvolvido usando tecnica de baby steps e TDD
+
 - magic_frozen_string_literal
 -  gem 'rspec-rails'
   -gem 'factory_bot_rails'

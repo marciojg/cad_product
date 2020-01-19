@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-class Size < ApplicationRecord
+class Color < ApplicationRecord
   validates :name, presence: true
 end
