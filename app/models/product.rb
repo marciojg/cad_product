@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class Product < ApplicationRecord
-
-  belongs_to :size
-  belongs_to :color
+  has_one :combination
 
   validates :name, presence: true
   validates :description, presence: true
