@@ -1,38 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Para executar a aplicação
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-GEMS EXTRAS
-
-Desenvolvido usando tecnica de baby steps e TDD
-
-- magic_frozen_string_literal
--  gem 'rspec-rails'
-  -gem 'factory_bot_rails'
-  gem 'shoulda-matchers'
-
-The above comment at top of a file changes semantics of static string literals in the file. The static string literals will be frozen and always returns same object. (The semantics of dynamic string literals is not changed.) This way has following benefits: No ugly f-suffix. No syntax error on older Ruby. We need only a line for each file.
+  - Clonar repositório da aplicação
+  - Rodar o comando abaixo na raiz do projeto
+    ```
+      docker-compose up -d && docker-compose exec application bash -c "rails db:setup"
+    ```
+  - Acessar localhost:3000
 
 
-db:setup
+# Gems Extras
+  - gem magic_frozen_string_literal
+    Usado para aplicar a string mágica em todos os arquivos .rb
+
+  - gem 'rspec-rails'
+    Usado para fazer os testes da aplicação
+
+  - gem 'factory_bot_rails'
+    Usado para contruir os objetos necessários para os testes de modelo principalmente
+
+  - gem 'shoulda-matchers'
+    Usado para facilitar e acelerar a escrita dos testes
