@@ -1,5 +1,10 @@
 # README
 
+# Requisitos para executar a aplicação
+
+  - docker ce
+  - docker-compose
+
 # Para executar a aplicação
 
   - Clonar repositório da aplicação
@@ -7,7 +12,7 @@
     ```
     docker-compose up -d && docker-compose exec application bash -c "rails db:setup"
     ```
-  - Acessar localhost:3000
+  - Acessar http://localhost:3000
 
 
 # Gems Extras
