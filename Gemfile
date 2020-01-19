@@ -7,11 +7,12 @@ gem 'rails'
 gem 'pg'
 gem 'puma'
 gem 'webpacker'
-gem 'rspec'
+gem 'simple_form'
 gem 'turbolinks'
 gem 'bootsnap', require: false
 
 group :development, :test do
+  gem 'rspec'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
