@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      redirect_to @product, notice: 'Product was successfully created.'
+      redirect_to @product, notice: 'Produto criado com sucesso.'
     else
       render :new
     end
@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     if @product.update(product_params)
-      redirect_to @product, notice: 'Product was successfully updated.'
+      redirect_to @product, notice: 'Produto atualizado com sucesso.'
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     @product.destroy
-    redirect_to products_url, notice: 'Product was successfully destroyed.'
+    redirect_to products_url, notice: 'Produto excluido com sucesso.'
   end
 
   private
@@ -49,6 +49,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit :name, :description, :amount, size_attributes: [:id, :name], color_attributes: [:id, :name]
+    params.require(:product).permit :name, :description
   end
 end
