@@ -1,0 +1,15 @@
+<%= simple_form_for product do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.input :description %>
+
+  <%= f.simple_fields_for :combination do |ff| %>
+    <%= ff.association :color %>
+    <%= ff.association :size %>
+    <%= ff.input :amount %>
+  <% end %>
+
+  <%= f.button :submit, class: "btn-primary" %>
+  <%= link_to 'Cancelar', products_path, class: "btn btn-warning", style: "color: #fff" %>
+<% end %>

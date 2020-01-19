@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @product.build_combination
   end
 
   def edit
@@ -19,7 +20,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      redirect_to @product, notice: 'Produto criado com sucesso.'
+      redirect_to @product
     else
       render :new
     end
@@ -29,7 +30,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     if @product.update(product_params)
-      redirect_to @product, notice: 'Produto atualizado com sucesso.'
+      redirect_to @product
     else
       render :edit
     end
@@ -39,7 +40,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
 
     @product.destroy
-    redirect_to products_url, notice: 'Produto excluido com sucesso.'
+    redirect_to products_url
   end
 
   private
@@ -49,6 +50,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit :name, :description
+    params.require(:product).permit :name, :description, combination_attributes: [:id, :amount, :color_id, :size_id]
   end
 end

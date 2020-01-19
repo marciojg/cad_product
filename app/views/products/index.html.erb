@@ -1,31 +1,27 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Color</th>
-      <th>Size</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="container">
+  <h1>Produtos</h1>
+  <div class="card-deck mb-3 text-center">
     <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.color.name %></td>
-        <td><%= product.size.name %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal"><strong>name: </strong><%= product.name %></h4>
+        </div>
+        <div class="card-body">
+          <h1 class="card-title pricing-card-title"><strong>amount: </strong><%=product&.combination&.amount%></h1>
+          <ul class="list-unstyled mt-3 mb-4">
+            <li><strong>description: </strong><%= product.description %></li>
+            <li><strong>size: </strong><%= product&.combination&.size&.name %></li>
+            <li><strong>color: </strong><%= product&.combination&.color&.name %></li>
+          </ul>
+          <%= link_to 'Show', product_path(product), class: "btn btn-primary", style: "color: #fff" %>
+          <%= link_to 'Edit', edit_product_path(product), class: "btn btn-info", style: "color: #fff" %>
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", style: "color: #fff" %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'New Product', new_product_path %>
+  </div>
+</div>
+<div class="container">
+  <%= link_to 'Cadastrar novo produto', new_product_path, class: "btn btn-lg btn-block btn-primary", style: "color: #fff" %>
+</div>
