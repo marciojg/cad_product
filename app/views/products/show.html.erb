@@ -1,19 +1,5 @@
 <div class="container">
   <div class="row">
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
-        <h4 class="my-0 font-weight-normal"><strong>name: </strong><%= @product.name %></h4>
-      </div>
-      <div class="card-body">
-        <h1 class="card-title pricing-card-title"><strong>amount: </strong><%=@product&.combination&.amount%></h1>
-        <ul class="list-unstyled mt-3 mb-4">
-          <li><strong>description: </strong><%= @product.description %></li>
-          <li><strong>size: </strong><%= @product&.combination&.size&.name %></li>
-          <li><strong>color: </strong><%= @product&.combination&.color&.name %></li>
-        </ul>
-        <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-primary", style: "color: #fff" %>
-        <%= link_to 'Back', products_path, class: "btn btn-info", style: "color: #fff" %>
-      </div>
-    </div>
+    <%= render 'product', product: @product %>
   </div>
 </div>

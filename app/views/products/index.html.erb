@@ -1,24 +1,9 @@
 
 <div class="container">
-  <h1>Produtos</h1>
+  <h1>Estoque</h1>
   <div class="card-deck mb-3 text-center">
     <% @products.each do |product| %>
-      <div class="card mb-4 shadow-sm">
-        <div class="card-header">
-          <h4 class="my-0 font-weight-normal"><strong>name: </strong><%= product.name %></h4>
-        </div>
-        <div class="card-body">
-          <h1 class="card-title pricing-card-title"><strong>amount: </strong><%=product&.combination&.amount%></h1>
-          <ul class="list-unstyled mt-3 mb-4">
-            <li><strong>description: </strong><%= product.description %></li>
-            <li><strong>size: </strong><%= product&.combination&.size&.name %></li>
-            <li><strong>color: </strong><%= product&.combination&.color&.name %></li>
-          </ul>
-          <%= link_to 'Show', product_path(product), class: "btn btn-primary", style: "color: #fff" %>
-          <%= link_to 'Edit', edit_product_path(product), class: "btn btn-info", style: "color: #fff" %>
-          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", style: "color: #fff" %>
-        </div>
-      </div>
+      <%= render 'product', product: product %>
     <% end %>
   </div>
 </div>
