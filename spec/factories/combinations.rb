@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :combination do
-    product { nil }
-    color { nil }
-    size { nil }
+    color
+    size
     amount { 1 }
+    product
   end
 end

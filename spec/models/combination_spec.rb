@@ -1,5 +1,13 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
 RSpec.describe Combination, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'validations' do
+    it { should validate_presence_of(:amount) }
+  end
+
+  describe 'Associations' do
+    it { should belong_to(:product) }
+    it { should belong_to(:color) }
+    it { should belong_to(:size) }
+  end
 end

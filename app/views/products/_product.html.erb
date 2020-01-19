@@ -9,10 +9,6 @@
       <li><strong>Tamanho: </strong><%= product&.combination&.size&.name %></li>
       <li><strong>Cor: </strong><%= product&.combination&.color&.name %></li>
     </ul>
-    <% if action_name == 'index' %>
-      <%= index_links(product) %>
-    <% else %>
-      <%= show_links(product) %>
-    <% end %>
+    <%= template_links(product, action_name) %>
   </div>
 </div>

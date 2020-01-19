@@ -9,5 +9,3 @@ require("@rails/activestorage").start()
 require("channels")
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-console.log('aaaaa')
