@@ -8,7 +8,6 @@ default: &default
   port: 5432
   database: cad_product_development
 
-
 development:
   <<: *default
 
@@ -16,4 +15,4 @@ test:
   <<: *default
 
 production:
-  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
