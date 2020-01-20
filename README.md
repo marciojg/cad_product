@@ -13,6 +13,18 @@
     docker-compose up --build -d && docker-compose exec application bash -c "rails db:setup"
     ```
   - Acessar http://localhost:3000
+  
+# Para testar a aplicação
+  
+  - Clonar repositório da aplicação
+  - Rodar o comando abaixo na raiz do projeto
+    ```
+    docker-compose up --build -d && docker-compose exec application bash -c "rails db:setup"
+    ```
+  - Também na raiz do projeto, rodar o comando abaixo
+    ```
+    docker-compose exec application rspec
+    ```
 
 
 # Gems Extras
