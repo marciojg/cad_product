@@ -10,7 +10,7 @@
   - Clonar repositório da aplicação
   - Rodar o comando abaixo na raiz do projeto
     ```
-    docker-compose up -d && docker-compose exec application bash -c "rails db:setup"
+    docker-compose up --build -d && docker-compose exec application bash -c "rails db:setup"
     ```
   - Acessar http://localhost:3000
 
